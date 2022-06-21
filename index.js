@@ -42,10 +42,8 @@ const startGame = async (difficulty) => {
     await lightsGameOn(positions, velocity);
 
     while(level <= maxLevel && !playerLoose) {
-        console.log(`Comienzas el nivel: ${level}` );
         velocity = difficultySelected.props[level-1].speed;
         positions = squareGenerator(difficultySelected.props[level-1].squareCant); 
-        console.log(positions)
         await resetGameColor(500);
         await startCounter(level);   
         await lightsGameOn(positions, velocity);
